@@ -27,6 +27,54 @@
       100% {background-position: 0% 50%;}
     }
 
+    #entry {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    #entry img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    #entry h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #fff0f5;
+      color: #8e1452;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #noBtn {
+      position: relative;
+    }
+
+    #main {
+      display: none;
+    }
+
     header {
       text-align: center;
       margin-bottom: 30px;
@@ -67,34 +115,36 @@
       transition: transform 0.3s ease;
       text-shadow: 0px 0px 1px #fff;
     }
+    /* Navigation Bar Style */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      margin: 0 15px;
+      border-radius: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
     .card:hover {
       transform: scale(1.02);
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .heart {
-      position: absolute;
-      color: #ffaad4;
-      font-size: 20px;
-      animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
     }
 
     .letter-container {
@@ -158,57 +208,118 @@
       margin-top: 40px;
       color: #ffeff0;
     }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ffaad4;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Hey Sonz 💖</h1>
-    <div class="photo">
-      <img src="./474413587_1758073908375881_2254446890189658021_n.jpg" alt="Sonz">
-    </div>
-  </header>
-
-  <div class="card">Itna toh kisi ne chaha bhi nahi tumhe jitna mene sirf socha hai 🌙</div>
-  <div class="card">Be my permanent and I will be your last 💍</div>
-  <div class="card">If loving you is a dream, I never want to wake up 💤</div>
-  <div class="card">Even silence feels like music when I think of you 🎶</div>
-  <div class="card">You walk in my thoughts like a prayer I never forget 🙏</div>
-  <div class="card">The world feels smaller, but my heart grows full with just your name 💗</div>
-  <div class="card">You're not just part of my story — you're the whole meaning of it 📖</div>
-  <div class="card">If love had a face, it would look exactly like you 🪞</div>
-
-  <!-- 3D Letter -->
-  <div class="letter-container" onclick="toggleLetter(this)">
-    <div class="envelope" id="letter">
-      <div class="front">💌 Drag or Click Me</div>
-      <div class="back">
-        You’re the softest part of my soul, and I’m so lucky to have found you.  
-        I want to be the reason your heart smiles forever. 💖
-      </div>
+  <!-- Entry Section -->
+  <div id="entry">
+    <img src="./84536ea88ad82992afb6e879bd7616c2.gif" alt="Cute Cat" />
+    <h2>Are you Sonz? 🥺</h2>
+    <div class="btns">
+      <button onclick="showMainContent()">Yes</button>
+      <button id="noBtn" onmouseover="moveNoButton()">No</button>
     </div>
   </div>
 
-  <footer>— With all my heart, <strong>Cutie 💗</strong></footer>
+  <!-- Main Content -->
+  <div id="main">
+    <header>
+      <h1>Hey Sonz 💖</h1>
+      <div class="photo">
+        <img src="./474413587_1758073908375881_2254446890189658021_n.jpg" alt="Sonz">
+      </div>
+    </header>
+    <!-- Horizontal Link Container -->
+    <div class="navbar">
+      <a href="home.html">My Ghar</a>
+      <a href="messages.html">My Messages</a>
+    </div>
 
-  <div class="hearts" id="hearts"></div>
+    <div class="card">Itna toh kisi ne chaha bhi nahi tumhe jitna mene sirf socha hai 🌙</div>
+    <div class="card">Be my permanent and I will be your last 💍</div>
+    <div class="card">If loving you is a dream, I never want to wake up 💤</div>
+    <div class="card">Even silence feels like music when I think of you 🎶</div>
+    <div class="card">You walk in my thoughts like a prayer I never forget 🙏</div>
+    <div class="card">The world feels smaller, but my heart grows full with just your name 💗</div>
+
+    <!-- 3D Letter -->
+    <div class="letter-container" onclick="toggleLetter(this)">
+      <div class="envelope">
+        <div class="front">💌 Drag or Click Me</div>
+        <div class="back">
+          You were the best part of my life and too pretty.
+I want to be the reason your heart smiles forever.
+Even if I can’t… just make sure to smile forever.
+Aap best ho, aur the… bas ek hug reh gaya tha,
+Aur ek aur chhoti si cheez – shaadi – woh bhi reh gayi.
+Kabhi kabhi lagta hai bas ek baar aur mil jaayein,
+
+
+          But 💖
+        </div>
+      </div>
+    </div>
+
+    <footer>— With all my heart, <strong>Cutie 💗</strong></footer>
+    <div class="hearts" id="hearts"></div>
+  </div>
 
   <script>
-    const hearts = document.getElementById('hearts');
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.textContent = '💖';
-      heart.style.left = `${Math.random() * 100}%`;
-      heart.style.fontSize = `${Math.random() * 20 + 10}px`;
-      heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
-      hearts.appendChild(heart);
-      setTimeout(() => heart.remove(), 7000);
+    function showMainContent() {
+      document.getElementById('entry').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+      startHearts();
     }
-    setInterval(createHeart, 500);
+
+    function moveNoButton() {
+      const btn = document.getElementById('noBtn');
+      btn.style.position = 'absolute';
+      btn.style.top = `${Math.random() * 80}%`;
+      btn.style.left = `${Math.random() * 80}%`;
+    }
 
     function toggleLetter(container) {
       container.querySelector('.envelope').classList.toggle('open');
+    }
+
+    function startHearts() {
+      const hearts = document.getElementById('hearts');
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.textContent = '💖';
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
+        hearts.appendChild(heart);
+        setTimeout(() => heart.remove(), 7000);
+      }, 500);
     }
   </script>
 
